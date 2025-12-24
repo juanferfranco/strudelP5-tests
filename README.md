@@ -89,3 +89,35 @@ _$: stack(
 )
 ```
 
+9. Si se requiere personalizar el mensaje que envía el REPL de strudel al puente, se debe abrir el archivo packages/osc/osc.mjs que está en los fuentes de strudel descargados de github. La función a personalizar sería esta:
+
+``` js
+export async function oscTrigger(hap, currentTime, cps = 1, targetTime) {
+
+  //console.log('[osc] sending OSC message', hap);
+  console.log('currentTime', currentTime);
+  console.log('targetTime', targetTime);
+
+  const ws = await connect();
+  const controls = parseControlsFromHap(hap, cps);
+  const keyvals = Object.entries(controls).flat();
+  const ts = collator.calculateTimestamp(currentTime, targetTime) * 1000;
+
+  //controls.st_ts = ts; // 'st_ts' por Strudel Timestamp
+  //const keyvals = Object.entries(controls).flat();
+
+  const msg = { address: '/dirt/play', args: keyvals, timestamp: ts };
+  //const msg = { address: '/dirt/play', args: keyvals, timestamp: ts };
+
+  console.log('ts', ts);
+
+  if ('oschost' in hap.value) {
+    msg['host'] = hap.value['oschost'];
+  }
+  if ('oscport' in hap.value) {
+    msg['port'] = hap.value['oscport'];
+  }
+  ws.send(JSON.stringify(msg));
+}
+```
+
