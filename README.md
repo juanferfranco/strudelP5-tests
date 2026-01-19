@@ -23,11 +23,15 @@ pnpm i
 pnpm dev
 ```
 
-5. Ejecutar el OSCBridge
+5. Descargar de este repositorio el OSCBridge, instalar las dependencias y ejecutarlo:
 
-6. Guardar en la carpeta website/public la aplicación p5.js. En este caso será Visuales visualesHouse.html
-7. Servir las visuales visualesHouse.html
-8. Pegar en el REPEL de Strudel:
+``` bash
+npm install
+node bridge.js
+```
+7. En el repositorio de Strudel guardar, en la carpeta website/public, la aplicación p5.js. En este caso será Visuales visualesHouse.html, pero se puede cambiar para experimentar con otras visuales.
+8. Servir las visuales visualesHouse.html
+9. Pegar en el REPEL de Strudel:
 
 ``` js
 setcps(0.5)
