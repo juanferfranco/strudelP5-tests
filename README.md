@@ -30,7 +30,7 @@ npm install
 node bridge.js
 ```
 7. En el repositorio de Strudel guardar, en la carpeta website/public, la aplicación p5.js. En este caso será Visuales visualesHouse.html, pero se puede cambiar para experimentar con otras visuales.
-8. Servir las visuales visualesHouse.html
+8. Servir las visuales visualesHouse.html abriendo una pestaña en el navegador con estas url http://localhost:4321/visualesHouse.html
 9. Pegar en el REPEL de Strudel:
 
 ``` js
