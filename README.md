@@ -92,6 +92,27 @@ _$: stack(
   hhLine.osc()
 )
 ```
+Otros experimentos para jugar con el archivo visualesMin.html:
+
+```js
+setcps(0.5)
+
+// const pat = s("[bd*2 sd hh oh]").bank("tr909")
+
+// const pat = s("[bd*2]").bank("tr909")
+
+// const pat = s("bd*4 sd hh*8 oh").bank("tr909")
+
+const pat = s("bd*4 sd sd mt").bank("tr909")
+
+//const pat = s("cr").bank("tr909")
+
+$: stack(
+  pat.gain('0.5'),
+  pat.osc()
+)
+```
+
 
 9. Si se requiere personalizar el mensaje que envía el REPL de strudel al puente, se debe abrir el archivo packages/osc/osc.mjs que está en los fuentes de strudel descargados de github. La función a personalizar sería esta:
 
