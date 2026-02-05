@@ -17,10 +17,24 @@ npm install -g pnpm@latest-10
 pnpm i
 ```
 
+Para Juan Jo en las máquinas del 312:
+
+``` bash
+npx pnpm i
+```
+
+
+
 4. Correr un servidor local para servir el RPEL de strudel:
 
 ``` bash
 pnpm dev
+```
+
+Para Juan Jo en las máquinas del 312:
+
+``` bash
+npx pnpm dev
 ```
 
 5. Descargar de este repositorio el OSCBridge, instalar las dependencias y ejecutarlo:
